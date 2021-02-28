@@ -68,14 +68,16 @@ def compute_centroid(points, centroids):
 
 
 def kmeans():
-	a = GIS("a",4,3)
+	a = GIS("a",1,3)
 	b = GIS("b",0,0)
 	c = GIS("c",5,1)
-	d = GIS("d",5,1)
-	points = [a,b,c,d]
+	d = GIS("d",5,2)
+	e = GIS("e",1,1)
+	f = GIS("f",0,1)
+	points = [a,b,c,d,e,f]
 	#print(points)
 	centroids = initiatize_centroids(points, NUM_CLUSTER)
-	print(centroids)
+	# print(centroids)
 
 	while(True):
 		#compute_ssd() # sum of squared distances
