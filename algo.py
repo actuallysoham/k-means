@@ -71,7 +71,7 @@ def kmeans():
 	b = GIS("b",0,0)
 	c = GIS("c",5,1)
 	d = GIS("d",5,1)
-	points = [a,b,c,d]
+	points = [a,b,c,d] # datatset
 	#print(points)
 	centroids = initiatize_centroids(points, NUM_CLUSTER)
 	print(centroids)
@@ -79,7 +79,7 @@ def kmeans():
 	while(True):
 		#compute_ssd() # sum of squared distances
 		assign_centroid(points, centroids)
-		old_centroids = copy.deepcopy(centroids)
+		old_centroids = copy.deepcopy(centroids) # to track change
 		compute_centroid(points, centroids)
 		if change_in_centroids(old_centroids, centroids) == False:
 			break
