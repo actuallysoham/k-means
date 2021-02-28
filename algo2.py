@@ -82,26 +82,35 @@ def compute_centroid(points, centroids):
 
 def visualize(points, centroids):
 	plot_array=[]
-
+	centX=[]
+	centY=[]
 	for centroid in centroids:
 		plot_array.append([[],[]])
+		centX.append(centroid.x)
+		centY.append(centroid.y)
 		for point in points:
 			if(point.centroid.x==centroid.x and point.centroid.y==centroid.y ):
 				plot_array[len(plot_array)-1][0].append(point.x)
 				plot_array[len(plot_array)-1][1].append(point.y)	
 
-	colors = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)]) for i in range(NUM_CLUSTER)]
+	colors = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)]) for i in range(NUM_CLUSTER+1)]
 	fig=go.Figure()
 	for i in range(NUM_CLUSTER):
 		fig.add_trace(go.Scatter(
 	    x=plot_array[i][0],
 	    y=plot_array[i][1],
-	    marker=dict(color=colors[i], size=12),
+	    marker=dict(color=colors[i], size=5),
 	    mode="markers",
 	    name="Cluster "+str(i+1),
 		))
+	fig.add_trace(go.Scatter(
+	x=centX,
+	y=centY,
+	marker=dict(color='rgba(244,0,0,0.65)',line_width=2, size=14),
+	mode="markers",
+	name="Centroid",
+	))
 	fig.show()
-
 # ======================== K-MEANS
 
 def kmeans():
