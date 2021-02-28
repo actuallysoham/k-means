@@ -3,7 +3,11 @@ import math
 import random
 import copy
 import plotly.graph_objects as go
+
 NUM_CLUSTER = int(input("Specify number of clusters: "))
+
+
+# ========================
 
 class GIS:
 	def __init__(self, name, x, y):
