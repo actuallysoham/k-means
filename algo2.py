@@ -1,4 +1,8 @@
-# main algorithm
+# Collaborators:
+# Soham De
+# Manish Rajani
+# Tanvi Roy
+# ========================
 import math
 import random
 import copy
